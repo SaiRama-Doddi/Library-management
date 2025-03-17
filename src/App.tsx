@@ -7,6 +7,7 @@ import { Footer } from './layouts/NavbarandFooter/Footer';
 import { HomePage } from './layouts/HomePage/HomePage';
 import { SearchBooksPage } from './layouts/SearchBooksPage/SearchBooksPage';
 import { Redirect, Route, Switch } from 'react-router-dom';
+import { BookCheckOutpage } from './layouts/BookCheckOutPage/BookCheckOutPage';
 
 function App() {
   return (
@@ -18,13 +19,17 @@ function App() {
       <Redirect to='/home' />
         </Route>
 
-        <Route path='/home' exact>
+        <Route path='/home' exact>  
           <HomePage />
         </Route>
 
 
         <Route path='/search'>
           <SearchBooksPage />
+        </Route>
+
+        <Route path='/checkout/:bookId'>
+         <BookCheckOutpage />
         </Route>
       </Switch>
       </div>
